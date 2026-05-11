@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Mobile App with Admin Dashboard",
+    "description": "A cross-platform mobile application paired with a full-featured admin web panel for managing users, content, and analytics in real time.",
+    "techStack": ["React Native", "Next.js", "Firebase", "TypeScript"],
+    "completionDate": "2026-05-02",
+    "category": "Fullstack",
+    "image": "/images/sample-photo.png"
+  },
+  {
+    "title": "E-commerce Website",
+    "description": "A responsive e-commerce platform with a custom CMS, payment integration, and user authentication.",
+    "techStack": ["Next.js", "Node.js", "MongoDB", "Stripe API"],
+    "completionDate": "2025-11-15",
+    "category": "Fullstack",
+    "image": "/images/sample-photo.png"
+  },
+  {
+    "title": "Personal Portfolio",
+    "description": "A sleek and modern portfolio website showcasing projects, skills, and experience.",
+    "techStack": ["Next.js", "Tailwind CSS", "Framer Motion"],
+    "completionDate": "2024-08-20",
+    "category": "Frontend",
+    "image": "/images/sample-photo.png"
+  }
+]

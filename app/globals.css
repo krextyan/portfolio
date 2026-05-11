@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+
+/* ─────────────────────────────────────────
+   Design Tokens
+   Adjust these variables to retheme the
+   entire site in one place.
+───────────────────────────────────────── */
+:root {
+  /* Colors */
+  --color-bg: #0d0d0f;
+  --color-surface: #141417;
+  --color-border: #252529;
+  --color-text: #e8e8ec;
+  --color-muted: #6b6b78;
+  --color-accent: #c8fb57;
+  --color-accent-dim: #c8fb5718;
+
+  /* Typography */
+  --font-display: "DM Serif Display", Georgia, serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+}
+
+/* ─────────────────────────────────────────
+   Base Styles
+───────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─────────────────────────────────────────
+   Prose (rendered Markdown content)
+   These styles apply to the log detail
+   pages where raw HTML is injected.
+───────────────────────────────────────── */
+.prose h2 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--color-text);
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose p {
+  color: #b0b0bc;
+  margin-bottom: 1rem;
+}
+
+.prose ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  color: #b0b0bc;
+  margin-bottom: 1rem;
+}
+
+.prose li {
+  margin-bottom: 0.3rem;
+}
+
+.prose strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.prose a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+/* ─────────────────────────────────────────
+   Selection color
+───────────────────────────────────────── */
+::selection {
+  background: var(--color-accent);
+  color: #0d0d0f;
+}
+
+/* ─────────────────────────────────────────
+   Scrollbar (optional aesthetic touch)
+───────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+@keyframes word-carousel {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  2.5% { /* Fade in and slide up over 0.25s (2.5% of 10s) */
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  22.5% { /* Stay visible for 2s (20% of 10s) */
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  25% { /* Fade out and slide up over 0.25s (2.5% of 10s) */
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  25.001% { /* Instantly reset position to below for the next cycle, staying hidden */
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% { opacity: 0; transform: translateY(100%); }
+}
+
+/* ─────────────────────────────────────────
+   Glassmorphism Utilities
+───────────────────────────────────────── */
+.glass-card, .project-card, .log-card {
+  background: rgba(20, 20, 23, 0.6) !important;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-card p, .glass-card span {
+  color: var(--color-text);
+}
+
+@keyframes spin-glow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-glow {
+  animation: spin-glow 3s linear infinite;
+}

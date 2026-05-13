@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   description:
     "Full-stack developer building fast, clean, user-focused software.",
-  keywords: ["Christian Lapeña", "itchan portfolio", "Software Developer", "Portfolio", "Next.js", "Vercel", "Xs Portfolio"],
+  keywords: ["Christian Lapeña", "itchan portfolio", "Software Developer", "Portfolio", "Next.js", "Itchan Vercel", "Xs Portfolio"],
   authors: [{ name: "Christian Lapeña" }],
   creator: "Christian Lapeña",
   openGraph: {
@@ -29,6 +29,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://krextyan-portfolio.vercel.app/",
     siteName: "Christian Lapeña Portfolio",
+  },
+  verification: {
+    google: "H0iGaYMz4nzmAqlfSmNJ8ZscH-5hAPO9nPW0wdNQDIs",
   },
 };
 

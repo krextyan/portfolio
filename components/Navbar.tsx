@@ -7,9 +7,10 @@
 
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
 import Button from "./Button";
 import Swal from "sweetalert2";
 
@@ -21,9 +22,74 @@ const NAV_LINKS = [
   { label: "Contact Me", href: "/feedback" }
 ];
 
+/**
+ * Animated Nav Link Component
+ * Performs a "rolling" text animation on hover.
+ */
+function NavLink({ label, href, isActive, onClick }: { label: string; href: string; isActive: boolean; onClick: () => void }) {
+  return (
+    <Link
+      href={href}
+      className="relative group py-2 md:py-0 block"
+      onClick={onClick}
+    >
+      {/* Tight container for the rolling effect */}
+      <div className="relative overflow-hidden">
+        <motion.div
+          initial="initial"
+          whileHover="hovered"
+          className="relative flex flex-col"
+        >
+          {/* Primary Text (Slides Up) */}
+          <motion.span
+            variants={{
+              initial: { y: 0 },
+              hovered: { y: "-100%" },
+            }}
+            transition={{ duration: 0.5, ease: [0.6, 0.01, 0.05, 0.95] }}
+            style={{ color: isActive ? "var(--color-accent)" : "var(--color-muted)" }}
+            className="block font-body text-sm font-medium transition-colors duration-300 group-hover:text-[var(--color-accent)]"
+          >
+            {label}
+          </motion.span>
+
+          {/* Secondary Text (Slides Up from the bottom) */}
+          <motion.span
+            variants={{
+              initial: { y: "100%" },
+              hovered: { y: 0 },
+            }}
+            transition={{ duration: 0.5, ease: [0.6, 0.01, 0.05, 0.95] }}
+            className="absolute inset-0 block font-body text-sm font-medium text-[var(--color-accent)]"
+          >
+            {label}
+          </motion.span>
+        </motion.div>
+      </div>
+
+      {/* Animated Underline */}
+      <motion.span
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: isActive ? 1 : 0 }}
+        whileHover={{ scaleX: 1 }}
+        className="absolute -bottom-1 left-0 w-full h-[1.5px] bg-[var(--color-accent)] origin-center transition-transform duration-300"
+      />
+    </Link>
+  );
+}
+
 export default function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+
+  // Prevent scrolling when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isOpen]);
 
   const showContact = () => {
     Swal.fire({
@@ -46,90 +112,94 @@ export default function Navbar() {
       className="sticky top-0 z-50"
     >
       <nav className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo / Name */}
         <Link
           href="/"
-          style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600,color: "var(--color-text)" }}
-          className="text-lg tracking-tight hover:opacity-80 transition-opacity"
+          style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, color: "var(--color-text)" }}
+          className="text-lg tracking-tight z-[60] hover:opacity-80 transition-opacity"
           onClick={() => setIsOpen(false)}
         >
-          <span style={{ color: "#c8fb57"}}>X</span>'s Web Portfolio
+          <span style={{ color: "var(--color-accent)" }}>X</span>'s Portfolio
         </Link>
 
         {/* Hamburger Menu Button */}
-        <button 
-          className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 z-50 focus:outline-none"
+        <button
+          className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 z-[60] focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle Menu"
-          aria-expanded={isOpen}
         >
-          <span
-            className={`block w-6 h-0.5 bg-[var(--color-text)] transition-transform duration-300 ${
-              isOpen ? "rotate-45 translate-y-2" : ""
-            }`}
+          <motion.span
+            animate={isOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
+            className="block w-6 h-0.5 bg-[var(--color-text)]"
           />
-          <span
-            className={`block w-6 h-0.5 bg-[var(--color-text)] transition-opacity duration-300 ${
-              isOpen ? "opacity-0" : "opacity-100"
-            }`}
+          <motion.span
+            animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
+            className="block w-6 h-0.5 bg-[var(--color-text)]"
           />
-          <span
-            className={`block w-6 h-0.5 bg-[var(--color-text)] transition-transform duration-300 ${
-              isOpen ? "-rotate-45 -translate-y-2" : ""
-            }`}
+          <motion.span
+            animate={isOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
+            className="block w-6 h-0.5 bg-[var(--color-text)]"
           />
         </button>
 
-        {/* Navigation links */}
-        <ul
-          className={`md:flex items-center gap-6 absolute md:static top-full left-0 w-full md:w-auto bg-[var(--color-bg)]/90 backdrop-blur-md md:bg-transparent md:backdrop-blur-none border-b md:border-none border-[var(--color-border)] p-6 md:p-0 transition-all duration-300 ease-in-out ${
-            isOpen 
-              ? "flex flex-col opacity-100 translate-y-0 visible pointer-events-auto" 
-              : "flex flex-col md:flex-row opacity-0 md:opacity-100 -translate-y-4 md:translate-y-0 invisible md:visible pointer-events-none md:pointer-events-auto"
-          }`}
-        >
-          {NAV_LINKS.map((link) => {
-            // Highlight the current page link
-            const isActive =
-              link.href === "/"
-                ? pathname === "/"
-                : pathname.startsWith(link.href);
-
-            if (link.label === "Contact Me") {
-              return (
-                <li key={link.href} className="py-2 md:py-0">
-                  <Button
-                    label={link.label}
-                    href="#"
-                    variant="primary"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setIsOpen(false);
-                      showContact();
-                    }}
-                  />
-                </li>
-              );
-            }
-
-            return (
-              <li key={link.href}>
-                <Link
+        {/* Desktop Navigation */}
+        <ul className="hidden md:flex items-center gap-8">
+          {NAV_LINKS.map((link) => (
+            <li key={link.href}>
+              {link.label === "Contact Me" ? (
+                <Button
+                  label={link.label}
                   href={link.href}
-                  style={{
-                    color: isActive ? "var(--color-accent)" : "var(--color-muted)",
-                    fontFamily: "var(--font-body)",
-                    fontSize: "0.9rem",
+                  variant="primary"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    showContact();
                   }}
-                  className="transition-colors hover:opacity-80 block py-2 md:py-0"
+                />
+              ) : (
+                <NavLink
+                  label={link.label}
+                  href={link.href}
+                  isActive={link.href === "/" ? pathname === "/" : pathname.startsWith(link.href)}
                   onClick={() => setIsOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            );
-          })}
+                />
+              )}
+            </li>
+          ))}
         </ul>
+
+        {/* Mobile Navigation Menu */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 z-50 bg-[var(--color-bg)] flex flex-col items-center justify-center gap-8 md:hidden"
+            >
+              <ul className="flex flex-col items-center gap-8">
+                {NAV_LINKS.map((link, i) => (
+                  <motion.li
+                    key={link.href}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.1 }}
+                  >
+                    <NavLink
+                      label={link.label}
+                      href={link.href}
+                      isActive={link.href === "/" ? pathname === "/" : pathname.startsWith(link.href)}
+                      onClick={() => {
+                        setIsOpen(false);
+                        if (link.label === "Contact Me") showContact();
+                      }}
+                    />
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
     </header>
   );

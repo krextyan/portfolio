@@ -30,7 +30,7 @@ export default function ParticlesBackground() {
       constructor() {
         this.x = Math.random() * canvas!.width;
         this.y = Math.random() * canvas!.height;
-        this.size = Math.random() * 2 + 0.5;
+        this.size = Math.random() * 2 + 1.2; // Ginawang mas malaki nang kaunti ang base size
         this.speedX = Math.random() * 1 - 0.5;
         this.speedY = Math.random() * 1 - 0.5;
       }
@@ -83,8 +83,8 @@ export default function ParticlesBackground() {
           const distance = Math.sqrt(dx * dx + dy * dy);
           if (distance < 100) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(200, 251, 87, ${0.15 - distance / 700})`;
-            ctx.lineWidth = 0.5;
+            ctx.strokeStyle = `rgba(200, 251, 87, ${0.4 - distance / 400})`; // Tinaasan ang alpha/opacity ng lines
+            ctx.lineWidth = 0.8; // Ginawang mas makapal ang linya
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
             ctx.stroke();
@@ -116,7 +116,7 @@ export default function ParticlesBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 -z-10 pointer-events-none opacity-40"
+      className="fixed inset-0 -z-10 pointer-events-none opacity-60" // Tinaasan ang overall opacity ng canvas
     />
   );
 }

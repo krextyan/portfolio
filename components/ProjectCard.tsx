@@ -8,13 +8,13 @@
 // ─────────────────────────────────────────
 
 import Image from "next/image";
+import Link from "next/link"; // Import Link for external links
 import Badge from "./Badge";
 import type { Project } from "@/lib/types";
 
 interface ProjectCardProps {
   project: Project;
 }
-
 export default function ProjectCard({ project }: ProjectCardProps) {
   // Format: "May 2026"
   const formattedDate = new Date(project.completionDate).toLocaleDateString(
@@ -25,11 +25,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <article
       style={{
-        backgroundColor: "var(--color-surface)",
-        border: "1px solid var(--color-border)",
-        borderRadius: "8px",
+        backgroundColor: "rgba(255, 255, 255, 0.05)", // Mas transparent para sa "real glass" look
+        backdropFilter: "blur(12px)", // Glass blur effect
+        WebkitBackdropFilter: "blur(12px)", // Support para sa Safari
+        border: "1px solid rgba(255, 255, 255, 0.1)", // Mas manipis at translucent na border
+        borderRadius: "12px", // Mas swabe na kanto
         overflow: "hidden",
-        transition: "all 0.2s ease-in-out",
+        transition: "all 0.3s ease-in-out",
         willChange: "transform",
       }}
       className="flex flex-col hover:border-[var(--color-accent)] hover:shadow-[0_0_40px_5px_rgba(200,251,87,0.8)] hover:scale-[1.05]"
@@ -102,6 +104,25 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           {project.description}
         </p>
 
+        {/* Project Links (GitHub and Live Page) */}
+        <div className="flex flex-wrap gap-2 mt-2">
+          {project.githubLink && (
+            <Link
+              href={project.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-1 text-sm font-medium rounded-full border border-[var(--color-border)] text-[var(--color-muted)] hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-colors"
+            >
+              GitHub
+            </Link>
+          )}
+          {project.liveLink && (
+            <Link href={project.liveLink} target="_blank" rel="noopener noreferrer"
+              className="px-3 py-1 text-sm font-medium rounded-full bg-[var(--color-accent)] text-[#0d0d0f] hover:brightness-110 transition-all shadow-[0_0_15px_rgba(200,251,87,0.3)]">
+              Live Site
+            </Link>
+          )}
+        </div>
         {/* Tech stack badges */}
         <div className="flex flex-wrap gap-2 pt-1">
           {project.techStack.map((tech) => (

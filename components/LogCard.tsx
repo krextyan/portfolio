@@ -23,12 +23,14 @@ export default function LogCard({ log }: LogCardProps) {
       href={`/logs/${log.slug}`}
       style={{
         display: "block",
-        backgroundColor: "var(--color-surface)",
-        border: "1px solid var(--color-border)",
-        borderRadius: "8px",
+        backgroundColor: "rgba(255, 255, 255, 0.05)", // Mas transparent para sa "real glass" look
+        backdropFilter: "blur(12px)",
+        WebkitBackdropFilter: "blur(12px)",
+        border: "1px solid rgba(255, 255, 255, 0.1)",
+        borderRadius: "12px",
         padding: "1.25rem 1.5rem",
         textDecoration: "none",
-        transition: "all 0.2s ease-in-out",
+        transition: "all 0.3s ease-in-out",
         willChange: "transform",
       }}
       className="hover:border-[var(--color-accent)] hover:shadow-[0_0_40px_5px_rgba(200,251,87,0.8)] group hover:scale-[1.05]"

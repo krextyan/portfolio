@@ -1,26 +1,69 @@
 [
   {
-    "title": "Mobile App with Admin Dashboard",
-    "description": "A cross-platform mobile application paired with a full-featured admin web panel for managing users, content, and analytics in real time.",
-    "techStack": ["React Native", "Next.js", "Firebase", "TypeScript"],
-    "completionDate": "2026-05-02",
-    "category": "Fullstack",
-    "image": "/images/sample-photo.png"
-  },
-  {
-    "title": "E-commerce Website",
-    "description": "A responsive e-commerce platform with a custom CMS, payment integration, and user authentication.",
-    "techStack": ["Next.js", "Node.js", "MongoDB", "Stripe API"],
-    "completionDate": "2025-11-15",
-    "category": "Fullstack",
-    "image": "/images/sample-photo.png"
-  },
-  {
-    "title": "Personal Portfolio",
-    "description": "A sleek and modern portfolio website showcasing projects, skills, and experience.",
-    "techStack": ["Next.js", "Tailwind CSS", "Framer Motion"],
-    "completionDate": "2024-08-20",
+    "title": "Makerspace Website",
+    "description": "Collaborated on the development and maintenance of the MakerSpace PH website using WordPress, focusing on responsive layouts, content management, and website customization.",
+    "techStack": ["WordPress", "PHP", "HTML", "CSS", "JavaScript"],
+    "completionDate": "2026-02-01",
     "category": "Frontend",
-    "image": "/images/sample-photo.png"
+    "image": "/images/makerspace-website.png",
+    "liveLink": "https://www.makerspace.ph/"
+  },
+  {
+    "title": "CryptoBeast - Web3 Turn-Based Battle Arena Game",
+    "description": "Developed a decentralized gaming platform using Web3 technologies, featuring turn-based battles and NFT integration.",
+    "techStack": ["React", "Solidity", "Web3.js", "Ethereum"],
+    "completionDate": "2026-03-01",
+    "category": "Fullstack",
+    "image": "/images/cryptobeast-game.png",
+    "githubLink": "https://github.com/krextyan/base-build-mapandan",
+    "liveLink": "https://base-build-mapandan.vercel.app/"
+  },
+  {
+    "title": "Web3 - Oryza Exchange",
+    "description": "Designed and developed a decentralized exchange platform using Web3 technologies, focusing on seamless token swapping and liquidity management.",
+    "techStack": ["React", "Solidity", "Web3.js", "Ethereum"],
+    "completionDate": "2026-03-02",
+    "category": "Fullstack",
+    "image": "/images/oryza-exchange.png",
+    "githubLink": "https://github.com/Rexter0541/eth-rice-rwa",
+    "liveLink": "https://eth-rice-rwa.vercel.app/"
+  },
+  {
+    "title": "Prototype using Figma -Workforce Accountability Attendance App",
+    "description": "Designed and developed a web application for tracking employee attendance and accountability, featuring a user-friendly interface and real-time reporting.",
+    "techStack": ["Figma"],
+    "completionDate": "2026-02-02",
+    "category": "Frontend",
+    "image": "/images/figma-attendance-app.png",
+    "liveLink": "https://www.figma.com/proto/XZgaBYTRW3baA5jpGHf8Su/Client-Worforce-Accountability-and-Attendance?node-id=0-1&t=GqgxmYInN7GrIUms-1"
+  },
+  {
+    "title": "Mobile -Workforce Accountability Attendance App",
+    "description": "Designed and developed a Mobile application for tracking employee attendance and accountability, featuring a user-friendly interface and real-time reporting.",
+    "techStack": ["Flutter", "MongoDB", "Supabase", "Firebase"],
+    "completionDate": "2026-03-02",
+    "category": "Fullstack",
+    "image": "/images/mobile-version.png",
+    "githubLink": "https://github.com/Rexter0541/attendance-app"
+  },
+  {
+    "title": "Website - Workforce Accountability Attendance App",
+    "description": "Designed and developed a website for tracking employee attendance and accountability, featuring a user-friendly interface and real-time reporting.",
+    "techStack": ["React", "Node.js", "MongoDB", "Supabase", "Tailwind CSS"],
+    "completionDate": "2026-04-02",
+    "category": "Fullstack",
+    "image": "/images/website-version.png",
+    "githubLink": "https://github.com/johnraymondgallego08-maker/Hack4mapandan_Workforce_Accountability_Attendance_AdminWeb",
+    "liveLink": "https://workforce-accountability-attendance-admin-web.vercel.app/"
+  },
+  {
+    "title": "Website - My Portfolio",
+    "description": "Designed and developed a personal portfolio website to showcase my skills and projects.",
+    "techStack": ["Next.js", "Tailwind CSS"],
+    "completionDate": "2026-05-02",
+    "category": "Frontend",
+    "image": "/images/my-portfolio.png",
+    "githubLink": "https://github.com/krextyan/portfolio",
+    "liveLink": "https://portfolio-one-beta-k9v8abzoic.vercel.app/"
   }
 ]

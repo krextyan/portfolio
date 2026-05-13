@@ -13,6 +13,8 @@ export interface Project {
   completionDate: string; // ISO date string, e.g. "2026-05-02"
   category: string;
   image?: string; // optional path to image in /public
+  githubLink?: string; // Optional GitHub repository link
+  liveLink?: string;   // Optional live demo link
 }
 
 /** Metadata extracted from a Markdown log file's frontmatter */

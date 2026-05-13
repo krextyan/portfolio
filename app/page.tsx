@@ -27,8 +27,25 @@ export default function HomePage() {
   // Show only the 2 most recent logs on the home page
   const recentLogs = getAllLogs().slice(0, 2);
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Christian Lapeña",
+    "alternateName": "itchan",
+    "url": "https://itchan-portfolio.vercel.app",
+    "jobTitle": "Software Developer",
+    "sameAs": [
+      "https://github.com/krextyan",
+      "https://linkedin.com/in/your-profile"
+    ]
+  };
+
   return (
     <div className="max-w-5xl mx-auto px-6 py-16 flex flex-col gap-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes float {
           0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }

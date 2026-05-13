@@ -14,12 +14,22 @@ import ParticlesBackground from "@/components/ParticlesBackground";
 
 // ── Site-wide SEO metadata ────────────────
 export const metadata: Metadata = {
+  metadataBase: new URL("https://itchan-portfolio.vercel.app"),
   title: {
     default: "Christian Lapeña — Developer",
     template: "%s | Christian Lapeña",
   },
   description:
     "Full-stack developer building fast, clean, user-focused software.",
+  keywords: ["Christian Lapeña", "itchan portfolio", "Software Developer", "Portfolio", "Next.js", "Vercel", "Xs Portfolio"],
+  authors: [{ name: "Christian Lapeña" }],
+  creator: "Christian Lapeña",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://itchan-portfolio.vercel.app",
+    siteName: "Christian Lapeña Portfolio",
+  },
 };
 
 export default function RootLayout({

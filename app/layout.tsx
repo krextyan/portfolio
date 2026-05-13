@@ -14,7 +14,7 @@ import ParticlesBackground from "@/components/ParticlesBackground";
 
 // ── Site-wide SEO metadata ────────────────
 export const metadata: Metadata = {
-  metadataBase: new URL("https://portfolio-itchan.vercel.app"),
+  metadataBase: new URL("https://krextyan-portfolio.vercel.app"),
   title: {
     default: "Christian Lapeña — Developer",
     template: "%s | Christian Lapeña",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://portfolio-itchan.vercel.app/",
+    url: "https://krextyan-portfolio.vercel.app/",
     siteName: "Christian Lapeña Portfolio",
   },
 };

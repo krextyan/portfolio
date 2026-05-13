@@ -32,7 +32,7 @@ export default function HomePage() {
     "@type": "Person",
     "name": "Christian Lapeña",
     "alternateName": "itchan",
-    "url": "https://itchan-portfolio.vercel.app",
+    "url": "https://portfolio-itchan.vercel.app/",
     "jobTitle": "Software Developer",
     "sameAs": [
       "https://github.com/krextyan",

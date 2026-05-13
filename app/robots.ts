@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://itchan-portfolio.vercel.app/sitemap.xml',
+    sitemap: 'https://portfolio-itchan.vercel.app/sitemap.xml',
   };
 }

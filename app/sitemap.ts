@@ -3,7 +3,7 @@ import { getAllLogSlugs } from '@/lib/logs';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Palitan ito ng iyong actual production domain
-  const baseUrl = "https://itchan-portfolio.vercel.app";
+  const baseUrl = "https://portfolio-itchan.vercel.app/";
   
   // Get all log pages
   const logs = getAllLogSlugs().map((slug) => ({

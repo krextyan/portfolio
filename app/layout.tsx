@@ -30,6 +30,9 @@ export const metadata: Metadata = {
     url: "https://krextyan-portfolio.vercel.app/",
     siteName: "Christian Lapeña Portfolio",
   },
+  alternates: {
+    canonical: "https://krextyan-portfolio.vercel.app/",
+  },
   verification: {
     google: "H0iGaYMz4nzmAqlfSmNJ8ZscH-5hAPO9nPW0wdNQDIs",
   },

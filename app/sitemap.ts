@@ -2,8 +2,8 @@ import { MetadataRoute } from 'next';
 import { getAllLogSlugs } from '@/lib/logs';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // Palitan ito ng iyong actual production domain
-  const baseUrl = "https://krextyan-portfolio.vercel.app/";
+  // Tinanggal ang trailing slash para iwas sa double slash sa URLs
+  const baseUrl = "https://krextyan-portfolio.vercel.app";
   
   // Get all log pages
   const logs = getAllLogSlugs().map((slug) => ({

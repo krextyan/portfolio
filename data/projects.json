@@ -2,7 +2,7 @@
   {
     "title": "Makerspace Website",
     "description": "Collaborated on the development and maintenance of the MakerSpace PH website using WordPress, focusing on responsive layouts, content management, and website customization.",
-    "techStack": ["WordPress", "PHP", "HTML", "CSS", "JavaScript"],
+    "techStack": ["WordPress", "HTML", "CSS", "JavaScript"],
     "completionDate": "2026-02-01",
     "category": "Frontend",
     "image": "/images/makerspace-website.png",
@@ -11,7 +11,7 @@
   {
     "title": "CryptoBeast - Web3 Turn-Based Battle Arena Game",
     "description": "Developed a decentralized gaming platform using Web3 technologies, featuring turn-based battles and NFT integration.",
-    "techStack": ["React", "Solidity", "Web3.js", "Ethereum"],
+    "techStack": ["React", "Typescript", "Solidity", "Web3.js", "Ethereum"],
     "completionDate": "2026-03-01",
     "category": "Fullstack",
     "image": "/images/cryptobeast-game.png",
@@ -21,7 +21,7 @@
   {
     "title": "Web3 - Oryza Exchange",
     "description": "Designed and developed a decentralized exchange platform using Web3 technologies, focusing on seamless token swapping and liquidity management.",
-    "techStack": ["React", "Solidity", "Web3.js", "Ethereum"],
+    "techStack": ["React", "Typescript", "Solidity", "Web3.js", "Ethereum"],
     "completionDate": "2026-03-02",
     "category": "Fullstack",
     "image": "/images/oryza-exchange.png",
@@ -59,7 +59,7 @@
   {
     "title": "Website - My Portfolio",
     "description": "Designed and developed a personal portfolio website to showcase my skills and projects.",
-    "techStack": ["Next.js", "Tailwind CSS"],
+    "techStack": ["Next.js", "Typescript", "Tailwind CSS"],
     "completionDate": "2026-05-02",
     "category": "Frontend",
     "image": "/images/my-portfolio.png",

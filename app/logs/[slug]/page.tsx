@@ -8,7 +8,7 @@
 // ─────────────────────────────────────────
 
 import type { Metadata } from "next";
-import { getAllLogSlugs, getLogBySlug } from "@/lib/logs";
+import { getAllLogSlugs, getLogBySlug, getAllLogs } from "@/lib/logs";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
@@ -57,6 +57,12 @@ export default async function LogDetailPage({
     year: "numeric",
   });
 
+  // Get navigation context
+  const allLogs = getAllLogs();
+  const currentIndex = allLogs.findIndex((l) => l.slug === slug);
+  const nextLog = currentIndex > 0 ? allLogs[currentIndex - 1] : null; // Newer log
+  const prevLog = currentIndex < allLogs.length - 1 ? allLogs[currentIndex + 1] : null; // Older log
+
   return (
     <div className="max-w-2xl mx-auto px-6 py-16">
       {/* Back link */}
@@ -93,10 +99,13 @@ export default async function LogDetailPage({
         </p>
         <h1
           style={{
-            fontFamily: "var(--font-display)",
+            fontFamily: "'Poppins', sans-serif",
+            fontWeight: 600,
             fontSize: "clamp(1.6rem, 4vw, 2.4rem)",
-            color: "var(--color-text)",
             lineHeight: 1.2,
+            background: "radial-gradient(circle at center, var(--color-text) 20%, var(--color-accent) 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
           }}
         >
           {log.title}
@@ -120,6 +129,71 @@ export default async function LogDetailPage({
         className="prose"
         dangerouslySetInnerHTML={{ __html: log.contentHtml }}
       />
+
+      {/* Navigation Buttons */}
+      <nav 
+        style={{ 
+          marginTop: "4rem", 
+          paddingTop: "2rem", 
+          borderTop: "1px solid var(--color-border)",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          gap: "1rem"
+        }}
+      >
+        {prevLog ? (
+          <Link
+            href={`/logs/${prevLog.slug}`}
+            style={{
+              flex: 1,
+              textDecoration: "none",
+              display: "flex",
+              flexDirection: "column",
+              gap: "0.5rem",
+              padding: "1rem",
+              borderRadius: "8px",
+              border: "1px solid var(--color-border)",
+              transition: "all 0.2s ease"
+            }}
+            className="hover:border-[var(--color-accent)] group"
+          >
+            <span style={{ fontSize: "0.7rem", color: "var(--color-muted)", fontFamily: "var(--font-mono)" }}>← PREVIOUS</span>
+            <span style={{ fontSize: "0.9rem", color: "var(--color-text)", fontWeight: 500 }} className="group-hover:text-[var(--color-accent)]">
+              {prevLog.title}
+            </span>
+          </Link>
+        ) : (
+          <div style={{ flex: 1 }} />
+        )}
+
+        {nextLog ? (
+          <Link
+            href={`/logs/${nextLog.slug}`}
+            style={{
+              flex: 1,
+              textDecoration: "none",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-end",
+              gap: "0.5rem",
+              padding: "1rem",
+              borderRadius: "8px",
+              border: "1px solid var(--color-border)",
+              transition: "all 0.2s ease",
+              textAlign: "right"
+            }}
+            className="hover:border-[var(--color-accent)] group"
+          >
+            <span style={{ fontSize: "0.7rem", color: "var(--color-muted)", fontFamily: "var(--font-mono)" }}>NEXT →</span>
+            <span style={{ fontSize: "0.9rem", color: "var(--color-text)", fontWeight: 500 }} className="group-hover:text-[var(--color-accent)]">
+              {nextLog.title}
+            </span>
+          </Link>
+        ) : (
+          <div style={{ flex: 1 }} />
+        )}
+      </nav>
     </div>
   );
 }

@@ -13,6 +13,7 @@ interface ButtonProps {
   href: string;
   variant?: "primary" | "ghost";
   external?: boolean;
+  download?: string;
   onClick?: (e: React.MouseEvent) => void;
 }
 
@@ -21,6 +22,7 @@ export default function Button({
   href,
   variant = "primary",
   external = false,
+  download,
   onClick,
 }: ButtonProps) {
   const baseStyle: React.CSSProperties = {
@@ -51,12 +53,13 @@ export default function Button({
   const combinedStyle = { ...baseStyle, ...variantStyle };
 
   // External links use <a>, internal links use Next.js <Link>
-  if (external) {
+  if (external || download) {
     return (
       <a
         href={href}
-        target="_blank"
-        rel="noopener noreferrer"
+        target={external ? "_blank" : undefined}
+        rel={external ? "noopener noreferrer" : undefined}
+        download={download}
         style={combinedStyle}
         onClick={onClick}
         className="hover:brightness-125 hover:contrast-125 hover:shadow-[0_0_20px_#c8fb57,0_0_40px_rgba(200,251,87,0.6)]"

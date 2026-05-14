@@ -24,6 +24,21 @@ export default function AboutPage() {
         .animate-spin-glow-color {
           animation: spin-glow-color 3s linear infinite;
         }
+        @keyframes typing {
+          from { width: 0 }
+          to { width: 25ch }
+        }
+        @keyframes blink-caret {
+          from, to { border-color: transparent }
+          50% { border-color: var(--color-accent) }
+        }
+        .typing-effect {
+          display: inline-block;
+          overflow: hidden;
+          white-space: nowrap;
+          border-right: 4px solid var(--color-accent);
+          animation: typing 2s steps(20, end), blink-caret 0.75s step-end infinite;
+        }
       `}} />
 
       {/* Profile Photo */}
@@ -49,7 +64,9 @@ export default function AboutPage() {
       </div>
 
       {/* Identity */}
-      <h1 className="text-4xl font-bold text-white mb-2">Christian Lapeña</h1>
+      <div className="typing-effect mb-2">
+        <h1 className="text-4xl font-bold text-white">Christian Lapeña</h1>
+      </div>
       <p className="text-xl font-medium mb-8" style={{color: "#c8fb57"}}>IT Student Intern</p>
 
       {/* Description */}
@@ -64,7 +81,7 @@ export default function AboutPage() {
 
       {/* Download Resume Button */}
       <div className="mt-8">
-        <Button label="Download Resume" href="#" variant="primary" />
+        <Button label="Download CV" href="/resume.pdf" variant="primary" download="Christian_Lapena_Resume.pdf" />
       </div>
     </main>
   );

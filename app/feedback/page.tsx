@@ -24,7 +24,8 @@ export default function FeedbackPage() {
   useEffect(() => {
     if (state?.success) {
       Swal.fire({
-        title: state.message,
+        title: "Thank You!",
+        text: state.message,
         icon: "success",
         background: "var(--color-surface)",
         color: "var(--color-text)",

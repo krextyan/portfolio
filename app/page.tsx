@@ -30,7 +30,7 @@ export default function HomePage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Christian Lapeña",
+    "name": "Christian Lapena",
     "alternateName": "itchan",
     "url": "https://krextyan-portfolio.vercel.app/",
     "jobTitle": "Software Developer",

@@ -1,73 +1,74 @@
 ---
-title: "Week 11 - Hack4Mapandan — Admin Bug Fixes, Activity Monitoring & System Optimization"
-date: "2026-04-16"
+title: "Week 11 - Hack4Mapandan — UI Enhancements, Documentation & System Analysis"
+date: "2026-04-30"
 ---
 
-This period focused on improving the stability, usability, and monitoring capabilities of the Hack4Mapandan (H4M) system. Work included backend bug fixing, geofencing adjustments, UI accessibility improvements, workflow debugging, and optimization of system asset management.
+This period focused on improving the Hack4Mapandan (H4M) admin interface, strengthening project documentation, conducting system presentations, and analyzing external platforms and PRD requirements to better understand system architecture and project direction.
 
 ---
 
 ## What I Worked On
 
-### Bug Fixes & Admin System Improvements
-- Performed bug fixing tasks on the admin side of the Hack4Mapandan project
-- Identified and resolved backend and workflow-related issues affecting admin operations
-- Improved overall system reliability through continuous debugging and testing
+### UI Improvements & Admin Enhancements
+- Implemented UI improvements on the admin side of the Hack4Mapandan system
+- Enhanced Events and Announcements sections for better accessibility and presentation
+- Improved layout consistency and overall user interface usability
+- Refined admin-side visual structure to support smoother navigation and interaction
 
-### Geofencing & Location Handling
-- Fixed geofencing restrictions that prevented the use of mock locations during testing
-- Adjusted location validation behavior to support development and testing workflows
-- Verified that location-based functionality remained stable after fixes
+### Documentation Compilation
+- Compiled group documentation covering completed, ongoing, and previously developed projects
+- Organized project records for easier tracking, review, and presentation purposes
+- Ensured documentation clarity and consistency across project materials
 
-### Activity Log Development
-- Developed a unified activity log for centralized and real-time system monitoring
-- Improved tracking visibility for user actions and system activities
-- Organized logging structure to support easier monitoring and debugging
+### Project Presentation & System Discussion
+- Successfully presented and discussed project features for both mobile and admin systems
+- Explained system workflows, functionalities, and implementation details during discussions
+- Participated in collaborative project review and feedback sessions
 
-### UI/UX Improvements
-- Enhanced user experience by making action buttons (Edit, Delete) fixed and consistently accessible
-- Improved interface usability and navigation efficiency for admin users
-- Ensured better responsiveness and accessibility across admin pages
+### Research & System Evaluation
+- Reviewed the PromptGraph.ai platform and evaluated its overall functionality and usability
+- Analyzed user experience, feature structure, and platform behavior for reference and learning
+- Observed implementation ideas and workflow patterns applicable to future development
 
-### System Optimization & Workflow Debugging
-- Conducted system performance checks to ensure recent updates were stable and functioning correctly
-- Debugged and optimized the "Time In" workflow to improve reliability and reduce processing issues
-- Refined storage bucket asset management for cleaner file handling and improved organization
+### PRD & System Architecture Analysis
+- Analyzed PRD (Product Requirements Document) requirements to better understand the overall system architecture
+- Reviewed project scope, feature expectations, and system objectives
+- Studied how different modules and workflows connect within the system structure
 
 ---
 
 ## Blockers / Issues Identified
 
-- Some workflow-related bugs required repeated testing before stable fixes could be applied
-- Geofencing behavior needed adjustments to properly support both production and testing environments
-- Asset storage organization required optimization to avoid inconsistencies in file handling
+- Some admin UI sections required additional refinement for better consistency
+- Documentation gathering required consolidation from multiple project sources
+- Certain PRD requirements needed deeper analysis due to system complexity
 
 ---
 
 ## What I Learned
 
-- Real-time activity logging greatly improves system monitoring and debugging efficiency
-- UI accessibility improvements can significantly enhance admin workflow usability
-- Location-based systems require careful balancing between security and testing flexibility
-- Workflow debugging is essential for maintaining reliable attendance-related features
-- Continuous testing helps identify hidden issues after optimization changes
+- Well-structured documentation improves collaboration and project tracking
+- UI consistency plays a major role in overall user experience and usability
+- Presenting system workflows helps identify overlooked issues and improvement areas
+- Reviewing external platforms provides useful insights into system design and functionality
+- PRD analysis is essential for understanding system scope and development direction
 
 ---
 
 ## Impact
 
-- Improved stability and reliability of the admin-side system workflows
-- Enhanced monitoring capabilities through the unified activity log feature
-- Increased usability and accessibility of admin action controls
-- Improved handling of location-based testing scenarios
-- Optimized system workflows and asset management processes
+- Improved admin-side user interface and announcement visibility
+- Strengthened project documentation and organizational tracking
+- Enhanced understanding of system architecture and feature planning
+- Improved communication and presentation of project functionalities
+- Gained valuable insights from external platform analysis and usability review
 
 ---
 
 ## Next Steps
 
-- Continue optimizing admin-side workflows and backend performance
-- Expand activity log functionality for more detailed monitoring insights
-- Improve validation and error handling for attendance workflows
-- Refine asset management structure for scalability and maintainability
-- Conduct additional testing to ensure long-term system stability-
+- Continue refining admin UI and dashboard consistency
+- Expand project documentation for future maintenance and onboarding
+- Apply insights gathered from platform analysis into system improvements
+- Further review PRD requirements to align development priorities
+- Improve feature presentation materials and workflow documentation

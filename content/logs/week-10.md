@@ -1,6 +1,6 @@
 ---
 title: "Week 10 - Hack4Mapandan — H4M System Improvements — Bug Fixes, Deployment & Feature Restoration"
-date: "2026-05-07"
+date: "2026-04-24"
 ---
 
 This period focused on stabilizing the Hack4Mapandan (H4M) system through bug fixing, deployment, UI improvements, backend corrections, and post-merge recovery work. Major efforts were also directed toward restoring missing features after branch integration and improving overall system reliability.

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   description:
     "Full-stack developer building fast, clean, user-focused software.",
-  keywords: ["Christian Lapena", "krextyan portfolio", "Software Developer", "Portfolio", "Next.js", "Itchan Vercel", "Xs Portfolio"],
+  keywords: ["christian lapena vercel", "christian lapena portfolio", "krextyan portfolio", "Itchan Vercel", "Xs Portfolio"],
   authors: [{ name: "Christian Lapeña" }],
   creator: "Christian Lapeña",
   openGraph: {

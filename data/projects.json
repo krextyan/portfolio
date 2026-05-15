@@ -48,7 +48,7 @@
   },
   {
     "title": "Website - Workforce Accountability Attendance App",
-    "description": "Designed and developed a website for tracking employee attendance and accountability, featuring a user-friendly interface and real-time reporting. To visit use this credentials: email: admin@gmai.com, password: admin123",
+    "description": "Designed and developed a website for tracking employee attendance and accountability, featuring a user-friendly interface and real-time reporting. To visit use this credentials: 'email: admin@gmai.com, password: admin123'",
     "techStack": ["React", "Node.js", "MongoDB", "Supabase", "Tailwind CSS"],
     "completionDate": "2026-04-02",
     "category": "Fullstack",

@@ -1,12 +1,16 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Krextyan | Portfolio',
+  metadataBase: new URL('https://krextyan-portfolio.vercel.app'),
+  title: {
+    default: 'Christian Lapena | Krextyan Portfolio',
+    template: '%s | Krextyan'
+  },
   description: 'Software Engineering Portfolio of Krextyan, specializing in React and Next.js.',
   openGraph: {
-    title: 'Krextyan Portfolio',
+    title: 'Christian Lapena | Krextyan Portfolio',
     description: 'Explore my latest projects and coding insights.',
-    url: 'https://your-domain.com',
+    url: 'https://krextyan-portfolio.vercel.app',
     siteName: 'Krextyan Portfolio',
     type: 'website',
   },

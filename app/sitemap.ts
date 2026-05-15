@@ -1,25 +1,26 @@
-import { MetadataRoute } from 'next';
-import { getAllLogSlugs } from '@/lib/logs';
+import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // Tinanggal ang trailing slash para iwas sa double slash sa URLs
-  const baseUrl = "https://krextyan-portfolio.vercel.app";
+  const baseUrl = 'https://krextyan-portfolio.vercel.app'
   
-  // Get all log pages
-  const logs = getAllLogSlugs().map((slug) => ({
-    url: `${baseUrl}/logs/${slug}`,
-    lastModified: new Date(),
-  }));
-
   return [
     {
       url: baseUrl,
       lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 1,
     },
     {
       url: `${baseUrl}/work`,
       lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
     },
-    ...logs,
-  ];
+    {
+      url: `${baseUrl}/logs`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.5,
+    },
+  ]
 }

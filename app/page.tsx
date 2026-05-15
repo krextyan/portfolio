@@ -18,8 +18,7 @@ import RobotChat from "@/components/RobotChat";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Home",
-  description: "Full-stack developer portfolio — projects, logs, and more.",
+  description: "Full-stack developer portfolio of Christian Lapena (Krextyan) — exploring projects, logs, and software engineering insights.",
 };
 
 export default function HomePage() {
@@ -31,7 +30,7 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Christian Lapena",
-    "alternateName": "itchan",
+    "alternateName": ["itchan", "Krextyan"],
     "url": "https://krextyan-portfolio.vercel.app/",
     "jobTitle": "Software Developer",
     "sameAs": [

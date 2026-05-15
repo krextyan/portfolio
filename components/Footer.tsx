@@ -33,7 +33,7 @@ export default function Footer() {
           </a>
 
           <a
-            href="www.linkedin.com/in/christian-lapeña-7a6874286"
+            href="https://www.linkedin.com/in/christian-lapeña-7a6874286"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative flex flex-col items-center transition-all duration-300 hover:-translate-y-1.5 text-[var(--color-muted)] hover:text-[var(--color-accent)] hover:brightness-125 hover:shadow-[0_0_20px_rgba(200,251,87,0.4)] rounded-full p-1"

@@ -11,32 +11,45 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import ParticlesBackground from "@/components/ParticlesBackground";
+import MaintenanceView from "@/components/MaintenanceView";
+
+const isMaintenance = process.env.MAINTENANCE_MODE === "true";
 
 // ── Site-wide SEO metadata ────────────────
-export const metadata: Metadata = {
-  metadataBase: new URL("https://krextyan-portfolio.vercel.app"),
-  title: {
-    default: "Christian Lapeña — Developer",
-    template: "%s | Christian Lapeña",
-  },
-  description:
-    "Full-stack developer building fast, clean, user-focused software.",
-  keywords: ["christian lapena vercel", "christian lapena portfolio", "krextyan portfolio", "Itchan Vercel", "Xs Portfolio"],
-  authors: [{ name: "Christian Lapeña" }],
-  creator: "Christian Lapeña",
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://krextyan-portfolio.vercel.app/",
-    siteName: "Christian Lapeña Portfolio",
-  },
-  alternates: {
-    canonical: "https://krextyan-portfolio.vercel.app/",
-  },
-  verification: {
-    google: "H0iGaYMz4nzmAqlfSmNJ8ZscH-5hAPO9nPW0wdNQDIs",
-  },
-};
+export const metadata: Metadata = isMaintenance
+  ? {
+      title: "Website Under Maintenance — Christian Lapeña",
+      description:
+        "The website is temporarily unavailable while I make some updates and improvements. Please come back soon.",
+      robots: {
+        index: false,
+        follow: false,
+      },
+    }
+  : {
+      metadataBase: new URL("https://krextyan-portfolio.vercel.app"),
+      title: {
+        default: "Christian Lapeña — Developer",
+        template: "%s | Christian Lapeña",
+      },
+      description:
+        "Full-stack developer building fast, clean, user-focused software.",
+      keywords: ["christian lapena vercel", "christian lapena portfolio", "krextyan portfolio", "Itchan Vercel", "Xs Portfolio"],
+      authors: [{ name: "Christian Lapeña" }],
+      creator: "Christian Lapeña",
+      openGraph: {
+        type: "website",
+        locale: "en_US",
+        url: "https://krextyan-portfolio.vercel.app/",
+        siteName: "Christian Lapeña Portfolio",
+      },
+      alternates: {
+        canonical: "https://krextyan-portfolio.vercel.app/",
+      },
+      verification: {
+        google: "H0iGaYMz4nzmAqlfSmNJ8ZscH-5hAPO9nPW0wdNQDIs",
+      },
+    };
 
 export default function RootLayout({
   children,
@@ -74,13 +87,18 @@ export default function RootLayout({
       </head>
       <body className="flex flex-col min-h-screen antialiased">
         <ParticlesBackground />
-        <Navbar />
 
-        {/* Main content area — grows to fill available height */}
-        <main className="flex-1">{children}</main>
-
-        <Footer />
-        <BackToTop />
+        {isMaintenance ? (
+          <MaintenanceView />
+        ) : (
+          <>
+            <Navbar />
+            {/* Main content area — grows to fill available height */}
+            <main className="flex-1">{children}</main>
+            <Footer />
+            <BackToTop />
+          </>
+        )}
       </body>
     </html>
   );

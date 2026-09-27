@@ -386,7 +386,7 @@ export default function HomePage() {
         <p style={{ color: "var(--color-muted)", fontSize: "1.1rem" }}>
           What do you think of my portfolio?{" "}
           <Link href="/feedback" className="text-[var(--color-accent)] hover:underline transition-all font-medium">
-            Lets Talk!
+            I’d love to hear your feedback!
           </Link>
         </p>
       </section>

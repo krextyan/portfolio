@@ -15,11 +15,11 @@ export default function Badge({ label }: BadgeProps) {
         fontFamily: "var(--font-mono)",
         fontSize: "0.7rem",
         color: "var(--color-accent)",
-        backgroundColor: "var(--color-accent-dim)",
-        border: "1px solid var(--color-accent)30",
+        backgroundColor: "rgba(185, 243, 107, 0.08)",
+        border: "1px solid rgba(185, 243, 107, 0.22)",
         letterSpacing: "0.03em",
       }}
-      className="inline-block px-2 py-0.5 rounded-sm font-medium"
+      className="inline-block px-2.5 py-1 rounded-full font-medium"
     >
       {label}
     </span>

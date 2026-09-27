@@ -16,7 +16,7 @@ export default function Pagination({ currentPage, totalPages }: PaginationProps)
       return (
         <span 
           key={label}
-          className="px-4 py-2 text-[10px] font-mono text-white/20 border border-white/5 rounded-md cursor-not-allowed opacity-40 uppercase tracking-widest"
+          className="px-4 py-2 text-[10px] font-mono text-white/20 border border-white/5 rounded-full cursor-not-allowed opacity-40 uppercase tracking-widest"
         >
           {label}
         </span>
@@ -28,9 +28,9 @@ export default function Pagination({ currentPage, totalPages }: PaginationProps)
         key={label}
         href={`/logs?page=${page}`}
         className={`
-          px-4 py-2 text-[10px] font-mono rounded-md border transition-all duration-300 uppercase tracking-widest
+          px-4 py-2 text-[10px] font-mono rounded-full border transition-all duration-300 uppercase tracking-widest
           ${isActive 
-            ? "border-[var(--color-accent)] text-[var(--color-accent)] bg-[rgba(200,251,87,0.05)] shadow-[0_0_20px_rgba(200,251,87,0.15)]" 
+            ? "border-[var(--color-accent)] text-[var(--color-accent)] bg-[rgba(185,243,107,0.05)] shadow-[0_0_20px_rgba(185,243,107,0.12)]"
             : "border-white/10 text-white/50 hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] hover:bg-white/5"
           }
         `}

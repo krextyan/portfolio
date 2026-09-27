@@ -9,9 +9,11 @@ import type { LogMeta } from "@/lib/types";
 
 interface LogCardProps {
   log: LogMeta;
+  /** Adds the accent glow-edge hover treatment (used on the home page). */
+  glow?: boolean;
 }
 
-export default function LogCard({ log }: LogCardProps) {
+export default function LogCard({ log, glow = false }: LogCardProps) {
   const formattedDate = new Date(log.date).toLocaleDateString("en-US", {
     month: "long",
     day: "numeric",
@@ -21,19 +23,11 @@ export default function LogCard({ log }: LogCardProps) {
   return (
     <Link
       href={`/logs/${log.slug}`}
-      style={{
-        display: "block",
-        backgroundColor: "rgba(255, 255, 255, 0.05)", // Mas transparent para sa "real glass" look
-        backdropFilter: "blur(12px)",
-        WebkitBackdropFilter: "blur(12px)",
-        border: "1px solid rgba(255, 255, 255, 0.1)",
-        borderRadius: "12px",
-        padding: "1.25rem 1.5rem",
-        textDecoration: "none",
-        transition: "all 0.3s ease-in-out",
-        willChange: "transform",
-      }}
-      className="hover:border-[var(--color-accent)] hover:shadow-[0_0_40px_5px_rgba(200,251,87,0.8)] group hover:scale-[1.05]"
+      className={`glass-card backdrop-blur-xl block rounded-[var(--radius-md)] p-5 md:p-6 text-decoration-none transition-all duration-500 will-change-transform hover:-translate-y-1 group ${
+        glow
+          ? "snapshot-card"
+          : "hover:border-[var(--color-border-strong)] hover:shadow-[var(--shadow-lift)]"
+      }`}
     >
       {/* Date */}
       <p
@@ -52,7 +46,7 @@ export default function LogCard({ log }: LogCardProps) {
       {/* Title */}
       <h3
         style={{
-          fontFamily: "'Poppins', sans-serif",
+          fontFamily: "var(--font-display)",
           fontWeight: 600,
           fontSize: "1.1rem",
           color: "var(--color-text)",

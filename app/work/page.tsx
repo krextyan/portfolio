@@ -22,26 +22,26 @@ export default function WorkPage() {
   const techOptions = getAllTechStack();
 
   return (
-    <div className="max-w-5xl mx-auto px-6 py-16">
+    <div className="max-w-6xl mx-auto px-6 pt-0 pb-20 md:pt-0 md:pb-28 md:-mt-16">
       {/* Page header */}
       <div className="mb-12">
         <p
           style={{
             fontFamily: "var(--font-mono)",
-            fontSize: "0.75rem",
+            fontSize: "0.68rem",
             color: "var(--color-accent)",
             textTransform: "uppercase",
-            letterSpacing: "0.1em",
+            letterSpacing: "0.18em",
             marginBottom: "0.75rem",
           }}
         >
           Portfolio
         </p>
         <h1
+          className="page-title"
           style={{
-            fontFamily: "'Poppins', sans-serif",
+            fontFamily: "var(--font-display)",
             fontWeight: 600,
-            fontSize: "clamp(2rem, 5vw, 3rem)",
             color: "var(--color-text)",
             lineHeight: 1.15,
           }}

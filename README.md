@@ -13,6 +13,28 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
+## How to Update Certificate Content
+
+### ➕ Add a new project
+
+Edit `data/certificates.json` and add a new object:
+
+```json
+{
+  "id": "certificate-1",
+  "title": "Certificate Title",
+  "issuer": "Issuing Organization",
+  "date": "2026-05-20",
+  "category": "Internship",
+  "description": "Short certificate description.",
+  "skills": ["Documentation", "WordPress"],
+  "image": "/images/your-image.png"
+}
+
+```
+
+Place images in `public/images/`. Done — no code changes needed.
+
 ## How to Update Content
 
 ### ➕ Add a new project
@@ -31,8 +53,25 @@ Edit `data/projects.json` and add a new object:
 ```
 
 Place images in `public/images/`. Done — no code changes needed.
-
 ---
+
+## How to Update Insights Content
+
+### ➕ Add a new project
+
+Edit `data/insights.json` and add a new object:
+
+```json
+{
+  "id": "first-insight",
+  "title": "First Insight",
+  "excerpt": "Short description.",
+  "date": "2026-06-20",
+  "category": "Career",
+  "tags": ["Learning"]
+}
+
+```
 
 ### 📝 Add a new log entry
 

@@ -44,7 +44,7 @@ export default function WorkClientPage({
   return (
     <div className="flex flex-col gap-8">
       {/* ── Filter controls ───────────────────── */}
-      <div className="flex flex-col gap-4">
+      <div className="glass-card backdrop-blur-xl rounded-[var(--radius-md)] p-4 md:p-5 flex flex-col gap-4">
         {/* Category filter */}
         <div className="flex flex-wrap gap-2 items-center">
           <span
@@ -108,11 +108,11 @@ export default function WorkClientPage({
         of {projects.length} projects
       </p>
 
-      {/* ── Project grid ─────────────────────── */}
+      {/* ── Project showcase ─────────────────── */}
       {filteredProjects.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="flex flex-col gap-6">
           {filteredProjects.map((project) => (
-            <ProjectCard key={project.title} project={project} />
+            <ProjectCard key={project.title} project={project} showcase />
           ))}
         </div>
       ) : (
@@ -152,10 +152,10 @@ function FilterButton({
         border: active
           ? "1px solid var(--color-accent)"
           : "1px solid var(--color-border)",
-        backgroundColor: active ? "var(--color-accent-dim)" : "transparent",
+        backgroundColor: active ? "var(--color-accent-dim)" : "rgba(255,255,255,0.02)",
         color: active ? "var(--color-accent)" : "var(--color-muted)",
         cursor: "pointer",
-        transition: "all 0.15s",
+        transition: "all var(--transition-smooth)",
       }}
     >
       {label}

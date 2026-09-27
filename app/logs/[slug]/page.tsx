@@ -57,143 +57,117 @@ export default async function LogDetailPage({
     year: "numeric",
   });
 
-  // Get navigation context
+  // Get navigation context for the scrollable log list
   const allLogs = getAllLogs();
-  const currentIndex = allLogs.findIndex((l) => l.slug === slug);
-  const nextLog = currentIndex > 0 ? allLogs[currentIndex - 1] : null; // Newer log
-  const prevLog = currentIndex < allLogs.length - 1 ? allLogs[currentIndex + 1] : null; // Older log
 
   return (
-    <div className="max-w-2xl mx-auto px-6 py-16">
-      {/* Back link */}
-      <Link
-        href="/logs"
-        style={{
-          fontFamily: "var(--font-mono)",
-          fontSize: "0.75rem",
-          color: "var(--color-muted)",
-          textDecoration: "none",
-          display: "inline-flex",
-          alignItems: "center",
-          gap: "0.25rem",
-          marginBottom: "2.5rem",
-        }}
-        className="hover:opacity-70 transition-opacity"
-      >
-        ← All logs
-      </Link>
-
-      {/* Log header */}
-      <header className="mb-10">
-        <p
-          style={{
-            fontFamily: "var(--font-mono)",
-            fontSize: "0.72rem",
-            color: "var(--color-accent)",
-            textTransform: "uppercase",
-            letterSpacing: "0.08em",
-            marginBottom: "0.75rem",
-          }}
-        >
-          {formattedDate}
-        </p>
-        <h1
-          style={{
-            fontFamily: "'Poppins', sans-serif",
-            fontWeight: 600,
-            fontSize: "clamp(1.6rem, 4vw, 2.4rem)",
-            lineHeight: 1.2,
-            background: "radial-gradient(circle at center, var(--color-text) 20%, var(--color-accent) 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}
-        >
-          {log.title}
-        </h1>
-
-        {/* Divider */}
-        <div
-          style={{
-            height: "1px",
-            backgroundColor: "var(--color-border)",
-            marginTop: "1.5rem",
-          }}
-        />
-      </header>
-
-      {/* ── Rendered Markdown content ─────────
-          The "prose" class applies the styles
-          defined in app/globals.css
-      ─────────────────────────────────────── */}
-      <article
-        className="prose"
-        dangerouslySetInnerHTML={{ __html: log.contentHtml }}
-      />
-
-      {/* Navigation Buttons */}
-      <nav 
-        style={{ 
-          marginTop: "4rem", 
-          paddingTop: "2rem", 
-          borderTop: "1px solid var(--color-border)",
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          gap: "1rem"
-        }}
-      >
-        {prevLog ? (
+    <div className="max-w-6xl mx-auto px-6 py-20 md:py-28">
+      <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_22rem] gap-12 lg:gap-16 items-start">
+        <div className="sm:pr-[22rem] md:pr-[24rem] lg:pr-0">
+          {/* Back link */}
           <Link
-            href={`/logs/${prevLog.slug}`}
+            href="/logs"
             style={{
-              flex: 1,
+              fontFamily: "var(--font-mono)",
+              fontSize: "0.75rem",
+              color: "var(--color-muted)",
               textDecoration: "none",
-              display: "flex",
-              flexDirection: "column",
-              gap: "0.5rem",
-              padding: "1rem",
-              borderRadius: "8px",
-              border: "1px solid var(--color-border)",
-              transition: "all 0.2s ease"
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.25rem",
+              marginBottom: "2.5rem",
             }}
-            className="hover:border-[var(--color-accent)] group"
+            className="hover:opacity-70 transition-opacity"
           >
-            <span style={{ fontSize: "0.7rem", color: "var(--color-muted)", fontFamily: "var(--font-mono)" }}>← PREVIOUS</span>
-            <span style={{ fontSize: "0.9rem", color: "var(--color-text)", fontWeight: 500 }} className="group-hover:text-[var(--color-accent)]">
-              {prevLog.title}
-            </span>
+            ← All logs
           </Link>
-        ) : (
-          <div style={{ flex: 1 }} />
-        )}
 
-        {nextLog ? (
-          <Link
-            href={`/logs/${nextLog.slug}`}
-            style={{
-              flex: 1,
-              textDecoration: "none",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-end",
-              gap: "0.5rem",
-              padding: "1rem",
-              borderRadius: "8px",
-              border: "1px solid var(--color-border)",
-              transition: "all 0.2s ease",
-              textAlign: "right"
-            }}
-            className="hover:border-[var(--color-accent)] group"
-          >
-            <span style={{ fontSize: "0.7rem", color: "var(--color-muted)", fontFamily: "var(--font-mono)" }}>NEXT →</span>
-            <span style={{ fontSize: "0.9rem", color: "var(--color-text)", fontWeight: 500 }} className="group-hover:text-[var(--color-accent)]">
-              {nextLog.title}
-            </span>
-          </Link>
-        ) : (
-          <div style={{ flex: 1 }} />
-        )}
-      </nav>
+          {/* Log header */}
+          <header className="mb-10">
+            <p
+              style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: "0.72rem",
+                color: "var(--color-accent)",
+                textTransform: "uppercase",
+                letterSpacing: "0.08em",
+                marginBottom: "0.75rem",
+              }}
+            >
+              {formattedDate}
+            </p>
+            <h1
+              style={{
+                fontFamily: "var(--font-display)",
+                fontWeight: 600,
+                fontSize: "clamp(1.6rem, 4vw, 2.4rem)",
+                lineHeight: 1.2,
+                color: "var(--color-text)",
+              }}
+            >
+              {log.title}
+            </h1>
+
+            {/* Divider */}
+            <div
+              style={{
+                height: "1px",
+                backgroundColor: "var(--color-border)",
+                marginTop: "1.5rem",
+              }}
+            />
+          </header>
+
+          {/* ── Rendered Markdown content ─────────
+              The "prose" class applies the styles
+              defined in app/globals.css
+          ─────────────────────────────────────── */}
+          <article
+            className="prose"
+            dangerouslySetInnerHTML={{ __html: log.contentHtml }}
+          />
+        </div>
+
+        {/* Scrollable log navigation */}
+        <aside className="log-archive glass-card flex flex-col overflow-hidden rounded-[var(--radius-md)] sm:top-24 sm:z-40 sm:h-[calc(100vh-15rem)] sm:w-[22rem]">
+          <div className="px-5 py-4 border-b border-[var(--color-border)]">
+            <p className="page-kicker">All logs</p>
+            <p className="mt-1 text-sm text-[var(--color-muted)]">Browse the archive</p>
+          </div>
+          <nav aria-label="Log archive" className="min-h-0 flex-1 overflow-y-auto overscroll-contain divide-y divide-[var(--color-border)]">
+            {allLogs.map((item) => {
+              const isActive = item.slug === slug;
+              const itemDate = new Date(item.date).toLocaleDateString("en-US", {
+                month: "short",
+                day: "numeric",
+                year: "numeric",
+              });
+
+              return (
+                <Link
+                  key={item.slug}
+                  href={`/logs/${item.slug}`}
+                  aria-current={isActive ? "page" : undefined}
+                  className={`group block px-5 py-4 transition-colors duration-200 hover:bg-[var(--color-accent-dim)] ${
+                    isActive ? "bg-[var(--color-accent-dim)]" : ""
+                  }`}
+                >
+                  <p className={`text-sm font-medium leading-snug transition-colors ${
+                    isActive
+                      ? "text-[var(--color-accent)]"
+                      : "text-[var(--color-text)] group-hover:text-[var(--color-accent)]"
+                  }`}>
+                    {item.title}
+                  </p>
+                  <p className="mt-1.5 font-mono text-[0.65rem] uppercase tracking-wider text-[var(--color-subtle)]">
+                    {itemDate}
+                  </p>
+                </Link>
+              );
+            })}
+          </nav>
+        </aside>
+      </div>
     </div>
   );
 }

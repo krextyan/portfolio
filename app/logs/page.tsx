@@ -37,7 +37,7 @@ export default async function LogsIndexPage({
   const paginatedLogs = sortedLogs.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
   return (
-    <div className="max-w-3xl mx-auto px-6 py-16">
+    <div className="max-w-6xl mx-auto px-6 pt-0 pb-20 md:pt-0 md:pb-28 md:-mt-16">
       {/* Page header */}
       <div className="mb-12">
         <p
@@ -53,10 +53,10 @@ export default async function LogsIndexPage({
           Activity
         </p>
         <h1
+          className="page-title"
           style={{
-            fontFamily: "'Poppins', sans-serif",
+            fontFamily: "var(--font-display)",
             fontWeight: 600,
-            fontSize: "clamp(2rem, 5vw, 3rem)",
             color: "var(--color-text)",
             lineHeight: 1.15,
           }}
@@ -76,23 +76,23 @@ export default async function LogsIndexPage({
       </div>
 
       {/* Premium Sorting UI */}
-      <div className="flex justify-between items-end mb-8 pb-4 border-b border-white/5">
+      <div className="glass-card rounded-[var(--radius-md)] flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-8 p-4 border-white/10">
         <span className="text-[10px] font-mono text-[var(--color-muted)] uppercase tracking-[0.2em]">
           Showing {paginatedLogs.length} of {logs.length} entries
         </span>
         
         <div className="flex gap-4 items-center">
           <span className="text-[10px] font-mono text-white/20 uppercase tracking-widest">Sort:</span>
-          <div className="flex bg-white/5 p-1 rounded-lg border border-white/5">
+          <div className="flex bg-black/20 p-1 rounded-lg border border-white/5">
             <Link 
               href={`/logs?page=1&sort=newest`}
-              className={`px-3 py-1.5 text-[10px] font-mono uppercase tracking-wider rounded-md transition-all ${currentSort === 'newest' ? 'bg-[var(--color-accent)] text-black font-bold shadow-[0_0_15px_rgba(200,251,87,0.3)]' : 'text-white/40 hover:text-white'}`}
+              className={`px-3 py-1.5 text-[10px] font-mono uppercase tracking-wider rounded-md transition-all ${currentSort === 'newest' ? 'bg-[var(--color-accent)] text-black font-bold shadow-[0_0_15px_rgba(185,243,107,0.2)]' : 'text-white/40 hover:text-white'}`}
             >
               Newest
             </Link>
             <Link 
               href={`/logs?page=1&sort=oldest`}
-              className={`px-3 py-1.5 text-[10px] font-mono uppercase tracking-wider rounded-md transition-all ${currentSort === 'oldest' ? 'bg-[var(--color-accent)] text-black font-bold shadow-[0_0_15px_rgba(200,251,87,0.3)]' : 'text-white/40 hover:text-white'}`}
+              className={`px-3 py-1.5 text-[10px] font-mono uppercase tracking-wider rounded-md transition-all ${currentSort === 'oldest' ? 'bg-[var(--color-accent)] text-black font-bold shadow-[0_0_15px_rgba(185,243,107,0.2)]' : 'text-white/40 hover:text-white'}`}
             >
               Oldest
             </Link>

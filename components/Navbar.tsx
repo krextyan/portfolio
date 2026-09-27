@@ -12,11 +12,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "./Button";
-import Swal from "sweetalert2";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Work", href: "/work" },
+  { label: "Services", href: "/services" },
+  { label: "Build", href: "/build" },
+  { label: "Certificates", href: "/certificates" },
+  { label: "Insights", href: "/insights" },
   { label: "Logs", href: "/logs" },
   { label: "About Me", href: "/about" },
   { label: "Contact Me", href: "/feedback" }
@@ -26,7 +29,7 @@ const NAV_LINKS = [
  * Animated Nav Link Component
  * Performs a "rolling" text animation on hover.
  */
-function NavLink({ label, href, isActive, onClick }: { label: string; href: string; isActive: boolean; onClick: () => void }) {
+function NavLink({ label, href, isActive, onClick }: { label: string; href: string; isActive: boolean; onClick: (event: React.MouseEvent<HTMLAnchorElement>) => void }) {
   return (
     <Link
       href={href}
@@ -84,37 +87,23 @@ export default function Navbar() {
 
   // Prevent scrolling when mobile menu is open
   useEffect(() => {
+    const previousOverflow = document.body.style.overflow;
+
     if (isOpen) {
       document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
     }
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
   }, [isOpen]);
 
-  const showContact = () => {
-    Swal.fire({
-      title: "Contact Me",
-      html: "Phone: (+63)938-861-9791<br>Email: krestyanstick25@gmail.com",
-      icon: "info",
-      background: "var(--color-surface)",
-      color: "var(--color-text)",
-      confirmButtonColor: "var(--color-accent)",
-      confirmButtonText: "Close",
-    });
-  };
-
   return (
-    <header
-      style={{
-        borderBottom: "1px solid var(--color-border)",
-        backgroundColor: "var(--color-bg)",
-      }}
-      className="sticky top-0 z-50"
-    >
-      <nav className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+    <header className="sticky top-0 z-50 px-4 pt-4 md:px-6">
+      <nav className="glass-card backdrop-blur-xl max-w-6xl mx-auto px-4 py-3 md:px-5 rounded-[var(--radius-md)] flex items-center justify-between">
         <Link
           href="/"
-          style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, color: "var(--color-text)" }}
+          style={{ fontFamily: "var(--font-display)", fontWeight: 600, color: "var(--color-text)" }}
           className="text-lg tracking-tight z-[60] hover:opacity-80 transition-opacity"
           onClick={() => setIsOpen(false)}
         >
@@ -123,9 +112,12 @@ export default function Navbar() {
 
         {/* Hamburger Menu Button */}
         <button
+          type="button"
           className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 z-[60] focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle Menu"
+          aria-expanded={isOpen}
+          aria-controls="mobile-navigation"
         >
           <motion.span
             animate={isOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
@@ -150,10 +142,6 @@ export default function Navbar() {
                   label={link.label}
                   href={link.href}
                   variant="primary"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    showContact();
-                  }}
                 />
               ) : (
                 <NavLink
@@ -167,40 +155,49 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Mobile Navigation Menu */}
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-              className="fixed inset-0 z-50 bg-[var(--color-bg)] flex flex-col items-center justify-center gap-8 md:hidden"
-            >
-              <ul className="flex flex-col items-center gap-8">
-                {NAV_LINKS.map((link, i) => (
-                  <motion.li
-                    key={link.href}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: i * 0.1 }}
-                  >
-                    <NavLink
-                      label={link.label}
-                      href={link.href}
-                      isActive={link.href === "/" ? pathname === "/" : pathname.startsWith(link.href)}
-                      onClick={() => {
-                        setIsOpen(false);
-                        if (link.label === "Contact Me") showContact();
-                      }}
-                    />
-                  </motion.li>
-                ))}
-              </ul>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </nav>
+
+      {/* Mobile Navigation Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            id="mobile-navigation"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-40 flex min-h-dvh flex-col items-center justify-center overflow-y-auto bg-[rgba(5,8,6,0.78)] px-6 py-10 backdrop-blur-2xl md:hidden"
+          >
+            <button
+              type="button"
+              onClick={() => setIsOpen(false)}
+              aria-label="Close menu"
+              className="absolute right-6 top-6 z-50 flex h-10 w-10 items-center justify-center rounded-full border border-[var(--color-border)] text-2xl leading-none text-[var(--color-muted)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+
+            <ul className="flex w-full max-w-xs flex-col items-center gap-5 text-center">
+              {NAV_LINKS.map((link, i) => (
+                <motion.li
+                  key={link.href}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                  className="w-full rounded-[var(--radius-sm)] px-4 py-3 transition-colors hover:bg-white/[0.05]"
+                >
+                  <NavLink
+                    label={link.label}
+                    href={link.href}
+                    isActive={link.href === "/" ? pathname === "/" : pathname.startsWith(link.href)}
+                    onClick={() => setIsOpen(false)}
+                  />
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

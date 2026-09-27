@@ -58,7 +58,7 @@
   },
   {
     "title": "Website - My Portfolio",
-    "description": "Designed and developed a personal portfolio website to showcase my skills and projects.",
+    "description": "Designed and developed a personal portfolio website to showcase my technical skills, projects, experience, and achievements. Focused on creating a clean, responsive, and user-friendly interface with organized project details and an accessible presentation of my professional background.",
     "techStack": ["Next.js", "Typescript", "Tailwind CSS", "Vercel"],
     "completionDate": "2026-05-02",
     "category": "Frontend",

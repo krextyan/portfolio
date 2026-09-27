@@ -28,3 +28,28 @@ export interface LogMeta {
 export interface LogFull extends LogMeta {
   contentHtml: string;
 }
+
+/** A certificate or credential from school, internship, or training. */
+export interface Certificate {
+  id: string;
+  title: string;
+  issuer: string;
+  date: string;
+  category: string;
+  description: string;
+  skills: string[];
+  credentialUrl?: string;
+  image?: string;
+}
+
+/** A curated note, lesson, or project thought for the Insights page. */
+export interface Insight {
+  id: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  category: string;
+  tags: string[];
+  body?: string;
+  projectUrl?: string;
+}

@@ -1,0 +1,32 @@
+[
+{
+    "id": "certificate-1",
+  "title": "Certificate of Participation",
+  "issuer": "HinAIng",
+  "date": "2026-04-14",
+  "category": "Webinar",
+  "description": "Participated in a webinar on the topic of 'A(I) Hybrid Collaboration and Agentic AI Collaboration within Governance”' hosted by HinAIng, gaining insights into emerging technologies and best practices in the field.",
+  "skills": [],
+  "image": "/images/coc-hinaing.png"
+},
+{
+    "id": "certificate-2",
+  "title": "Certificate of Completion",
+  "issuer": "Makerspace Innovhub OPC",
+  "date": "2026-05-20",
+  "category": "Internship",
+  "description": "Successfully completed an internship program at Makerspace Innovhub OPC, gaining hands-on experience in web and mobile development, research, and administrative support within a collaborative makerspace environment.",
+  "skills": [],
+  "image": "/images/coc-makerspace.png"
+},
+{
+  "id": "certificate-3",
+"title": "Certificate of Participation",
+"issuer": "UEP Codewave Organization",
+"date": "2023-11-07",
+"category": "Internship",
+"description": "Partcipated in seminar on the topic of 'Tech Fusion: Showacasing the Integration of Creative Multimedia Elements in Web Development' hosted by UEP Codewave Organization.",
+"skills": [],
+"image": "/images/coc-codewave.jpg"
+}
+]

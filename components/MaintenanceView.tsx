@@ -25,7 +25,7 @@ export default function MaintenanceView() {
         initial={{ opacity: 0, y: 24, scale: 0.98 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="glass-card w-full max-w-xl rounded-2xl p-8 sm:p-12 text-center relative overflow-hidden shadow-2xl border border-white/10"
+        className="glass-card backdrop-blur-xl w-full max-w-xl rounded-[var(--radius-md)] p-8 sm:p-12 text-center relative overflow-hidden shadow-2xl border border-white/10"
       >
         {/* Subtle accent border line at top */}
         <div
@@ -61,7 +61,7 @@ export default function MaintenanceView() {
         <h1
           className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4"
           style={{
-            fontFamily: "'Poppins', var(--font-body), sans-serif",
+            fontFamily: "var(--font-display)",
             color: "var(--color-text)",
             lineHeight: 1.2,
           }}

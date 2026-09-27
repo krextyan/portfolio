@@ -1,15 +1,14 @@
 export default function Loading() {
   return (
-    <div className="max-w-5xl mx-auto px-6 py-16 flex flex-col gap-12 animate-pulse">
+    <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6 pb-20 pt-0 md:-mt-16 md:pb-28 animate-pulse">
       <div className="space-y-4">
         <div className="h-10 w-48 bg-[var(--color-border)] rounded-lg"></div>
         <div className="h-4 w-full max-w-md bg-[var(--color-border)] rounded"></div>
       </div>
       
-      {/* Project Grid Skeleton */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {[...Array(4)].map((_, i) => (
-          <div key={i} className="h-72 bg-[var(--color-border)] rounded-xl"></div>
+      <div className="flex flex-col gap-6">
+        {[1, 2, 3, 4].map((item) => (
+          <div key={item} className="grid min-h-[24rem] grid-cols-1 overflow-hidden rounded-xl bg-[var(--color-border)] md:grid-cols-2" />
         ))}
       </div>
     </div>

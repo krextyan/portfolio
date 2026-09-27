@@ -30,9 +30,9 @@ export default function Button({
     fontSize: "0.875rem",
     fontWeight: 500,
     display: "inline-block",
-    padding: "0.55rem 1.25rem",
-    borderRadius: "4px",
-    transition: "all 0.4s ease-in-out",
+    padding: "0.7rem 1.2rem",
+    borderRadius: "999px",
+    transition: "all var(--transition-smooth)",
     willChange: "transform, opacity, box-shadow",
     textDecoration: "none",
   };
@@ -40,14 +40,15 @@ export default function Button({
   const variantStyle: React.CSSProperties =
     variant === "primary"
       ? {
-          backgroundColor: "var(--color-accent)",
-          color: "#0d0d0f",
-          border: "1px solid var(--color-accent)",
+          background: "linear-gradient(135deg, var(--color-accent), #8bdc78)",
+          color: "#071009",
+          border: "1px solid rgba(211, 255, 173, 0.65)",
+          boxShadow: "0 10px 24px rgba(110, 202, 117, 0.16)",
         }
       : {
-          backgroundColor: "transparent",
+          backgroundColor: "rgba(255, 255, 255, 0.035)",
           color: "var(--color-text)",
-          border: "1px solid var(--color-border)",
+          border: "1px solid var(--color-border-strong)",
         };
 
   const combinedStyle = { ...baseStyle, ...variantStyle };
@@ -62,7 +63,7 @@ export default function Button({
         download={download}
         style={combinedStyle}
         onClick={onClick}
-        className="hover:brightness-125 hover:contrast-125 hover:shadow-[0_0_20px_#c8fb57,0_0_40px_rgba(200,251,87,0.6)]"
+        className="hover:-translate-y-0.5 hover:brightness-110 hover:shadow-[0_14px_30px_rgba(110,202,117,0.2)] active:translate-y-0"
       >
         {label}
       </a>
@@ -70,7 +71,7 @@ export default function Button({
   }
 
   return (
-    <Link href={href} style={combinedStyle} className="hover:brightness-125 hover:contrast-125 hover:shadow-[0_0_20px_#c8fb57,0_0_40px_rgba(200,251,87,0.6)]" onClick={onClick}>
+    <Link href={href} style={combinedStyle} className="hover:-translate-y-0.5 hover:brightness-110 hover:shadow-[0_14px_30px_rgba(110,202,117,0.2)] active:translate-y-0" onClick={onClick}>
       {label}
     </Link>
   );

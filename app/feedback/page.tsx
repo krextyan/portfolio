@@ -51,7 +51,7 @@ export default function FeedbackPage() {
             lineHeight: 1.1,
           }}
         >
-          Lets Connect!
+          Let's Connect!
         </h1>
         <p style={{ color: "var(--color-muted)", fontSize: "1.1rem", maxWidth: "600px" }}>
         Have a question about my projects or an idea for a web system or application? Feel free to reach out! Whether you'd like to learn more about my work, discuss a project, or explore working together, I'd be happy to hear from you.

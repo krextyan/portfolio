@@ -35,14 +35,14 @@ export const metadata: Metadata = isMaintenance
       },
       description:
         "Full-stack developer building fast, clean, user-focused software.",
-      keywords: ["christian lapena vercel", "christian lapena portfolio", "krextyan portfolio", "Itchan Vercel", "krextyan vercel", "krextyan portfolio vercel", "krextyan portfolio website", "krextyan portfolio app", "krextyan portfolio web app", "krextyan portfolio web application", "krextyan portfolio webapp", "krextyan portfolio web application development", "krextyan portfolio web application development company", "krextyan portfolio web application development services", "krextyan portfolio web application development solutions"],
+      keywords: [ "krextyan vercel portffolio", "krextyan portfolio vercel", "christian vercel portfolio", "christian portfolio vercel"],
       authors: [{ name: "Christian Lapeña" }],
       creator: "Christian Lapeña",
       openGraph: {
         type: "website",
         locale: "en_US",
         url: "https://krextyan-portfolio.vercel.app/",
-        siteName: "Christian Lapeña Portfolio",
+        siteName: "Krextyan Portfolio",
       },
       alternates: {
         canonical: "https://krextyan-portfolio.vercel.app/",

@@ -92,7 +92,7 @@ export default function FeedbackPage() {
               </div>
               <div>
                 <p className="font-mono text-[0.65rem] uppercase tracking-wider text-[var(--color-subtle)]">Location</p>
-                <p className="mt-1 text-sm leading-relaxed text-[var(--color-text)]">Zone 1, San Antonio-Arzadon<br />San Manuel, Pangasinan</p>
+                <p className="mt-1 text-sm leading-relaxed text-[var(--color-text)]">San Antonio-Arzadon<br />San Manuel, Pangasinan</p>
               </div>
               <div>
                 <p className="font-mono text-[0.65rem] uppercase tracking-wider text-[var(--color-subtle)]">Website</p>

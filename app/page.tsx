@@ -403,9 +403,9 @@ export default function HomePage() {
       {/* ── Section 5: Feedback CTA ────────── */}
       <section className="flex flex-col items-center py-10 border-t border-[var(--color-border)]">
         <p style={{ color: "var(--color-muted)", fontSize: "1.1rem" }}>
-          What do you think of my portfolio?{" "}
+          Have a project in mind?{" "}
           <Link href="/feedback" className="text-[var(--color-accent)] hover:underline transition-all font-medium">
-            Lets Talk!
+            Hit me up!
           </Link>
         </p>
       </section>

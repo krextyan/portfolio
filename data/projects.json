@@ -10,7 +10,7 @@
   },
   {
     "title": "CryptoBeast - Web3 Turn-Based Battle Arena Game",
-    "description": "Built a Web3 gaming experience where players can collect NFT creatures, battle opponents, and participate in an in-game marketplace through minting, buying, and selling digital assets.",
+    "description": "Built a Web3 gaming experience where players can collect and breed NFT creatures, battle opponents, and participate in an in-game marketplace through minting, buying, and selling digital assets.",
     "techStack": ["React", "Typescript", "Solidity", "Web3.js", "Vercel", "Ethereum"],
     "completionDate": "2026-03-01",
     "category": "Fullstack",

@@ -62,7 +62,9 @@ export default function FeedbackPage() {
         <section className="flex flex-col gap-6" aria-label="Contact information">
           <div className="glass-card overflow-hidden rounded-[var(--radius-lg)] border border-[var(--color-border)]">
             <div className="border-b border-[var(--color-border)] px-5 py-4">
-              <p className="page-kicker">Location / 001</p>
+              <p className="page-kicker" style={{ color: "var(--color-accent)" }}>
+                Location / 001
+              </p>
               <p className="mt-1 text-sm text-[var(--color-muted)]">San Manuel, Pangasinan</p>
             </div>
             <iframe
@@ -75,7 +77,7 @@ export default function FeedbackPage() {
           </div>
 
           <div className="glass-card rounded-[var(--radius-lg)] p-6 md:p-7">
-            <p className="page-kicker mb-4">Direct contact / 002</p>
+            <p className="page-kicker mb-4" style={{ color: "var(--color-accent)" }}>Direct contact / 002</p>
             <div
               className="mb-5 h-px w-full"
               style={{ background: "rgba(185, 243, 107, 0.28)" }}

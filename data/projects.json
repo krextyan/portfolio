@@ -1,7 +1,7 @@
 [
   {
     "title": "Makerspace Website",
-    "description": "Collaborated on the development and maintenance of the MakerSpace PH website using WordPress, focusing on responsive layouts, content management, and website customization.",
+    "description": "Collaborated on the design and development of the Official website of Makerspace Innovhub OPC using WordPress, contributing to responsive layouts, website customization, and content management to create a polished and accessible web experience.",
     "techStack": ["WordPress", "HTML", "CSS", "JavaScript"],
     "completionDate": "2026-02-01",
     "category": "Frontend",
@@ -10,7 +10,7 @@
   },
   {
     "title": "CryptoBeast - Web3 Turn-Based Battle Arena Game",
-    "description": "Developed a decentralized gaming platform using Web3 technologies, featuring turn-based battles and NFT integration.",
+    "description": "Built a Web3 gaming experience where players can collect NFT creatures, battle opponents, and participate in an in-game marketplace through minting, buying, and selling digital assets.",
     "techStack": ["React", "Typescript", "Solidity", "Web3.js", "Vercel", "Ethereum"],
     "completionDate": "2026-03-01",
     "category": "Fullstack",
@@ -20,7 +20,7 @@
   },
   {
     "title": "Web3 - Oryza Exchange",
-    "description": "Designed and developed a decentralized exchange platform using Web3 technologies, focusing on seamless token swapping and liquidity management.",
+    "description": "Built a Web3 platform for tokenizing rice assets as digital RWA certificates, enabling users to mint verified batch records and easily audit their origin and weight using a unique Batch ID.",
     "techStack": ["React", "Typescript", "Solidity", "Web3.js", "Vercel", "Ethereum"],
     "completionDate": "2026-03-02",
     "category": "Fullstack",
@@ -30,7 +30,7 @@
   },
   {
     "title": "Prototype using Figma -Workforce Accountability Attendance App",
-    "description": "Designed and developed a web application for tracking employee attendance and accountability, featuring a user-friendly interface and real-time reporting.",
+    "description": "Designed a user-centered web application prototype in Figma for tracking employee attendance and accountability, focusing on intuitive navigation, clear information flow, and a seamless user experience.",
     "techStack": ["Figma"],
     "completionDate": "2026-02-02",
     "category": "UI/UX Design",
@@ -39,7 +39,7 @@
   },
   {
     "title": "Mobile -Workforce Accountability Attendance App",
-    "description": "Designed and developed a Mobile application for tracking employee attendance and accountability, featuring a user-friendly interface and real-time reporting.",
+    "description": "Designed and developed a mobile application that allows employees to conveniently record their attendance, view their attendance records, and stay accountable through a simple and user-friendly interface.",
     "techStack": ["Flutter", "MongoDB", "Supabase", "Firebase"],
     "completionDate": "2026-03-02",
     "category": "Fullstack",
@@ -48,7 +48,7 @@
   },
   {
     "title": "Website - Workforce Accountability Attendance App",
-    "description": "Designed and developed a website for tracking employee attendance and accountability, featuring a user-friendly interface and real-time reporting. To visit use this credentials. email: admin@gmail.com, password: admin123.",
+    "description": "A full-stack attendance management system designed to help organizations track employee attendance and accountability through a user-friendly interface and real-time reporting. To visit use this credentials. email: admin@gmail.com, password: admin123.",
     "techStack": ["React", "Node.js", "MongoDB", "Supabase", "Tailwind CSS"],
     "completionDate": "2026-04-02",
     "category": "Fullstack",

@@ -18,7 +18,7 @@ const experienceEntries = [
   {
     type: 'Internship Experience',
     title: 'IT Technical & Documentation Intern',
-    organization: 'Innovhub Makerspace OPC',
+    organization: 'Makerspace Innovhub OPC',
     period: 'Mapandan, Pangasinan | February 2026 - May 2026',
     role: 'Junior Web and Mobile Developer, Researcher, and Administrative Support',
     description: 'Supported website, system, documentation, and client-focused project work in a collaborative makerspace environment.',
@@ -34,8 +34,8 @@ const experienceEntries = [
   {
     type: 'Software Development Project',
     title: 'Workforce Attendance and Payroll Management System',
-    organization: 'Mobile and cloud-based employee management system',
-    period: '2026',
+    organization: 'Hack4Mapandan -  Makerspace Innovhub OPC',
+    period: 'Mapandan, Pangasinan | March 2026 - May 2026',
     role: 'Mobile Application Developer / System Developer',
     description: 'Developed a mobile-based system for employee attendance monitoring, employee information management, and payroll-related processes.',
     technologies: ['Flutter', 'Dart', 'Firebase Firestore', 'Firebase Authentication', 'Supabase Storage', 'GitHub'],
@@ -142,7 +142,7 @@ export default function AboutPage() {
               <p className="mt-1 font-mono text-xs uppercase tracking-wider text-[var(--color-accent)]">IT &amp; Software Professional</p>
               <p className="mt-3 font-mono text-[0.6rem] uppercase tracking-wider" style={{ color: "var(--color-accent)" }}>Education</p>
               <p className="mt-1 text-sm text-[var(--color-muted)]">University of Eastern Pangasinan</p>
-              <p className="mt-1 text-sm text-[var(--color-subtle)]">San Manuel, Pangasinan</p>
+              <p className="mt-1 text-sm text-[var(--color-subtle)]">Binalonan, Philippines, 2436</p>
             </div>
           </div>
 

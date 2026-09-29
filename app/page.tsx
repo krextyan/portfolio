@@ -39,6 +39,9 @@ const TOOL_ICON_SLUGS: Record<string, string> = {
   "Node.js": "nodedotjs",
   "Tailwind CSS": "tailwindcss",
   "Next.js": "nextdotjs",
+  Laravel: "laravel",
+  Claude: "anthropic",
+  "GitHub Copilot": "githubcopilot",
 };
 
 export const metadata: Metadata = {
@@ -54,6 +57,10 @@ export default function HomePage() {
     "Unity",
     "Git",
     "GitHub",
+    "Laravel",
+    "Codex",
+    "Claude",
+    "GitHub Copilot",
   ]))
     .filter((tool) => tool !== "CSS");
   // Show only the 3 most recent logs on the home page
@@ -368,12 +375,24 @@ export default function HomePage() {
                 aria-hidden={index >= tools.length}
                 className="group flex shrink-0 items-center gap-3 rounded-full border border-[var(--color-border)] bg-black/15 px-5 py-3 text-base font-medium text-[var(--color-muted)] backdrop-blur-xl transition-colors hover:border-[var(--color-border-strong)] hover:text-[var(--color-text)]"
               >
-                <img
-                  src={`https://cdn.simpleicons.org/${TOOL_ICON_SLUGS[tool] ?? "code"}/b9f36b`}
-                  alt=""
-                  className="h-10 w-10 object-contain transition-transform duration-300 group-hover:scale-110"
-                  loading="lazy"
-                />
+                {tool === "Codex" ? (
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    className="h-10 w-10 shrink-0 transition-transform duration-300 group-hover:scale-110"
+                    fill="none"
+                  >
+                    <path d="M12 2.5 20.2 7.25v9.5L12 21.5l-8.2-4.75v-9.5L12 2.5Z" stroke="#b9f36b" strokeWidth="1.5" />
+                    <path d="m8.1 9.2 2.1-1.2m3.7 0 2.1 1.2m-7.9 5.6 2.1 1.2m3.7 0 2.1-1.2M7.1 10.1v3.8m9.8-3.8v3.8M12 8.1v7.8" stroke="#b9f36b" strokeWidth="1.5" strokeLinecap="round" />
+                  </svg>
+                ) : (
+                  <img
+                    src={`https://cdn.simpleicons.org/${TOOL_ICON_SLUGS[tool] ?? "code"}/b9f36b`}
+                    alt=""
+                    className="h-10 w-10 object-contain transition-transform duration-300 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                )}
                 <span className="whitespace-nowrap">{tool}</span>
               </div>
             ))}

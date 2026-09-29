@@ -90,7 +90,7 @@ export default function BuildPage() {
           {buildStages.map((stage) => (
             <article key={stage.number} className="glass-card backdrop-blur-xl group flex h-full flex-col rounded-[var(--radius-lg)] p-6 transition-all duration-500 hover:-translate-y-1 hover:border-[var(--color-border-strong)] hover:shadow-[var(--shadow-lift)] md:p-7">
               <div className="flex items-center justify-between gap-4">
-                <span className="font-mono text-sm text-[var(--color-accent)]">{stage.number}</span>
+                <span className="font-mono text-sm" style={{ color: "var(--color-accent)" }}>{stage.number}</span>
                 <span className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-[var(--color-subtle)]">{stage.phase}</span>
               </div>
               <h3 className="section-heading mt-8 text-xl font-semibold leading-tight text-[var(--color-text)]">{stage.title}</h3>

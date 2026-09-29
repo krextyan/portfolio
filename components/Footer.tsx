@@ -45,7 +45,7 @@ export default function Footer() {
             <div className="mt-6 space-y-2 border-t border-[var(--color-border)] pt-5 text-xs leading-relaxed text-[var(--color-muted)]">
               <a href="mailto:christianlapena.work@gmail.com" className="block transition-colors hover:text-[var(--color-accent)]">christianlapena.work@gmail.com</a>
               <a href="tel:+639388619791" className="block transition-colors hover:text-[var(--color-accent)]">(+63) 938-861-9791</a>
-              <p>Zone 1, San Antonio-Arzadon, San Manuel, Pangasinan</p>
+              <p>San Antonio-Arzadon, San Manuel, Pangasinan, Philippines, 2438</p>
               <a href="https://krextyan-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer" className="block transition-colors hover:text-[var(--color-accent)]">krextyan-portfolio.vercel.app</a>
             </div>
           </div>

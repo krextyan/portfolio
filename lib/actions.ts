@@ -35,9 +35,9 @@ export async function submitFeedback(prevState: any, formData: FormData) {
       }),
     });
     
-    return { success: true, message: "Thank you! Your feedback has been successfully submitted." };
+    return { success: true, message: "Thank you! Your message has been successfully submitted." };
   } catch (error) {
-    console.error("Failed to save feedback:", error);
-    return { success: false, message: "May problema sa pag-save. Pakisubukan muli." };
+    console.error("Failed to submit inquiry:", error);
+    return { success: false, message: "Message not sent, Try again." };
   }
 }
